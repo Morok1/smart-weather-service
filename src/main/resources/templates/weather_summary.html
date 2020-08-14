@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link href="css/style.css" rel="stylesheet" type="text/css">
+	<title>Weather Summary</title>
+</head>
+<body>
+	<!-- weather  -->
+	<div class="weather-widget">
+		<h2>City: <label th:text="${name}"></label></h2>
+		<h2>Weather <img src="http://openweathermap.org/img/wn/10d@2x.png"></h2>
+		<br>
+		<table border="1" cellpadding="10" cellspacing="0" align="center"  width="150px" th:object="${weather_summary}">
+			<tbody>
+			<tr><td><label th:text="Info"></label></td><td><label th:text="${info}"></label></td></tr>
+			<tr><td><label th:text="Temp"></label></td><td><label th:text="${temp}"></label></td></tr>
+			<tr><td><label th:text="MinTemp"></label></td><td><label th:text="${minTemp}"></label></td></tr>
+			<tr><td><label th:text="MaxTemp"></label></td><td><label th:text="${maxTemp}"></label></td></tr>
+			<tr><td><label th:text="Wind"></label></td><td><label th:text="${wind}"></label></td></tr>
+			</tbody>
+		</table>
+
+		<h2>Recommendations: <label th:text="${recommendation}"></label></h2>
+
+	</div>
+	<br>
+	<!-- weather  -->
+	<button><a href="/weather_search">See weather in other city</a></button>
+</body>
+</html>
